@@ -259,24 +259,10 @@ h1{
 
 
 /* tab: thành viên & phân công */
-.duty-card{background:linear-gradient(180deg,#fff,#fff4f9);border:2px dashed var(--pink-d);border-radius:18px;padding:14px 16px;margin-bottom:20px}
-.duty-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.duty-head h3{margin:0;font-family:'Baloo 2',cursive;font-size:18px}
-.duty-count{font-weight:800;font-size:13px;color:var(--pink-d);background:#fff;border-radius:999px;padding:4px 12px}
-.duty-names{margin:10px 0 0;font-weight:700;font-size:15px;line-height:1.6}
-.member-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
-.member-head h3{margin:0;font-family:'Baloo 2',cursive;font-size:17px}
-.member-count{font-weight:700;font-size:13px;color:var(--ink-soft)}
-.member-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
-.member{display:flex;align-items:center;gap:8px;background:#fffafd;border:2px solid #f6e9f2;border-radius:14px;
-  padding:9px 12px;font-weight:700;font-size:14px}
-.member.on{background:var(--mint);border-color:var(--mint-d);box-shadow:0 6px 14px rgba(79,199,156,.25)}
-.m-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 @media (max-width:560px){
   .tabs-card{padding:16px 14px}
   .moment-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
-  .member-list{grid-template-columns:1fr}
 }
 
 /* quán hay đặt — 2 dòng: tên + "thường đặt" */

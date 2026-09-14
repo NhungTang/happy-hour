@@ -57,44 +57,6 @@ const MOMENTS = [
   { caption: 'Món tủ của team', img: '' },
 ];
 
-/* Danh sách team ConnectPOS */
-const MEMBERS = [
-  'Vũ Tiến Hùng',
-  'Lê Anh Vũ',
-  'Nguyễn Thị Huyền',
-  'Nguyễn Thị Ngọc Diệp',
-  'Trương Mạnh Hoàng',
-  'Nguyễn Bích Ngọc',
-  'Đinh Tạ Tuấn Linh',
-  'Nguyễn Mạnh Tiến',
-  'Nguyễn Mạnh Tùng',
-  'Lê Trung Hiếu',
-  'Nguyễn Lê Phương Anh',
-  'Lê Thị Bích Hồng',
-  'Đàm Thị Trà My',
-  'Tạ Quang Linh',
-  'Trần Tuyết Trinh',
-  'Nguyễn Thị Luyến',
-  'Lương Việt Trinh',
-  'Nguyễn Thị Vân Anh',
-  'Trần Thị Trang',
-  'Lương Trần Ngọc Anh',
-  'La Thị Thu Hương',
-  'Nguyễn Thị Thêm',
-  'Lê Thành Trung',
-  'Trần Thị Thái',
-  'Hứa Trung Kiên',
-  'Mai Văn An',
-  'Trần Thị Thu Hương',
-  'Trương Mạnh Cường',
-  'Đỗ Hồng Hải Nam',
-  'Tăng Thị Nhung',
-  'Hà Văn An',
-  'Nguyễn Văn Hải',
-  'Nguyễn Hoàng Quân',
-  'Nguyễn Thế Kiên',
-  'Lâm Huy Bảo',
-];
 
 /* Menu tham khảo — các buổi đã đặt. Cố định, thêm buổi mới ngay ở mảng này.
    total để null nếu không đủ giá từng món. */
@@ -134,9 +96,8 @@ const MENU = [
 ];
 
 /* 4 người chuẩn bị tuần này — ĐIỀN TÊN VÀO ĐÂY HÀNG TUẦN.
-   Tên phải viết đúng như trong MEMBERS ở trên thì mới được tô sáng trong danh sách.
-   Slot nào chưa chốt thì để '' cũng được. Ví dụ:
-     const DUTY = ['Mai Văn An', 'Trần Thị Thái', 'Hứa Trung Kiên', 'Lâm Huy Bảo']; */
+   Tên hiện ở dòng ngay dưới tiêu đề trang.
+   Slot nào chưa chốt thì để '' cũng được. */
 const DUTY = [
   'Trần Tuyết Trinh',
   'Nguyễn Thị Thêm',
@@ -230,30 +191,9 @@ function renderMenu() {
   $('#menuEmpty').classList.toggle('hidden', MENU.length > 0);
 }
 
-/* ---------------- tab: thành viên & phân công ---------------- */
-function renderTeam() {
+/* ---------------- dòng đầu bếp tuần này ---------------- */
+function renderChefs() {
   const onDuty = chefs();
-  const ul = $('#memberList');
-  ul.innerHTML = '';
-  MEMBERS.forEach((name) => {
-    const on = onDuty.includes(name);
-    const li = document.createElement('li');
-    li.className = 'member' + (on ? ' on' : '');
-    li.innerHTML = `<span class="m-tick">${on ? '👨‍🍳' : '👤'}</span><span class="m-name"></span>`;
-    li.querySelector('.m-name').textContent = name;
-    ul.appendChild(li);
-  });
-
-  // tên điền sai (không có trong MEMBERS) thì báo ở console cho dễ sửa
-  onDuty.filter((n) => !MEMBERS.includes(n))
-    .forEach((n) => console.warn(`DUTY: "${n}" không khớp tên nào trong MEMBERS`));
-
-  $('#dutyCount').textContent = `${onDuty.length}/${DUTY.length} người`;
-  $('#dutyNames').textContent = onDuty.length
-    ? onDuty.join('  ·  ')
-    : 'Chưa chốt đầu bếp tuần này 🥺';
-  $('#memberCount').textContent = `${MEMBERS.length} người`;
-
   const hero = $('#heroSub');
   hero.innerHTML = '';
   if (onDuty.length) {
@@ -408,8 +348,8 @@ function init() {
   renderPlaces();
   renderMoments();
   renderMenu();
-  renderTeam();
-  setTab('team');
+  renderChefs();
+  setTab('menu');
   tick();
 }
 
