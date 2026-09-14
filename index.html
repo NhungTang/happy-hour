@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Hour Team 🍻 — Bảng ghi chú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍻</text></svg>" />
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <span class="float f1">🍕</span><span class="float f2">🍗</span><span class="float f3">🧁</span>
+    <span class="float f4">🍹</span><span class="float f5">🍤</span><span class="float f6">🎉</span>
+    <span class="float f7">🥗</span><span class="float f8">🍜</span><span class="float f9">🧋</span>
+    <span class="float f10">🍰</span><span class="float f11">🍇</span><span class="float f12">🍉</span>
+    <span class="float f13">🥟</span><span class="float f14">🍟</span><span class="float f15">🍢</span>
+    <span class="float f16">🌮</span><span class="float f17">🍩</span><span class="float f18">🥤</span>
+  </div>
+
+  <header class="hero">
+    <div class="hero-badge">thứ 4 hàng tuần ✨</div>
+    <h1>Happy Hour của tụi mình <span class="wiggle">🍻</span></h1>
+    <p class="hero-sub" id="heroSub"></p>
+
+    <div class="countdown-card">
+      <div class="cd-left">
+        <label for="eventAt">🗓️ Giờ quẩy (thứ 4 hàng tuần)</label>
+        <input type="datetime-local" id="eventAt" />
+        <div class="cd-place">
+          <span>📍</span>
+          <b class="cd-place-fixed">Pantry tầng 19</b>
+        </div>
+      </div>
+      <div class="cd-right">
+        <div class="cd-boxes" id="cdBoxes">
+          <div class="cd-box"><b data-cd="d">0</b><span>ngày</span></div>
+          <div class="cd-box"><b data-cd="h">0</b><span>giờ</span></div>
+          <div class="cd-box"><b data-cd="m">0</b><span>phút</span></div>
+          <div class="cd-box"><b data-cd="s">0</b><span>giây</span></div>
+        </div>
+        <p class="cd-msg" id="cdMsg">Đếm ngược tới giờ vui 💗</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="duo">
+      <div class="mini-card">
+        <h2>💸 Ngân sách một bữa</h2>
+        <div class="mini-row">
+          <label for="budget">Tổng</label>
+          <input type="text" id="budget" inputmode="numeric" maxlength="15" />
+          <span class="unit">đ</span>
+        </div>
+        <div class="mini-row">
+          <label for="people">Số người</label>
+          <input type="number" id="people" min="1" step="1" />
+          <span class="unit">người</span>
+        </div>
+        <p class="per-head">Mỗi người khoảng <b id="perHead">—</b></p>
+      </div>
+
+      <div class="mini-card">
+        <h2>🍜 Quán hay đặt</h2>
+        <ul class="place-list" id="placeList"></ul>
+      </div>
+    </section>
+
+    <section class="tabs-card">
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="team">👥 Thành viên</button>
+        <button class="tab" data-tab="menu">📋 Menu tham khảo</button>
+        <button class="tab" data-tab="moments">📸 Khoảnh khắc ăn uống</button>
+      </div>
+
+      <!-- tab 1 -->
+      <div class="tab-panel" id="panel-team">
+        <div class="duty-card">
+          <div class="duty-head">
+            <h3>🎀 Tuần này ai chuẩn bị?</h3>
+            <span class="duty-count" id="dutyCount">0/4 người</span>
+          </div>
+          <p class="duty-names" id="dutyNames"></p>
+        </div>
+        <div class="member-head">
+          <h3>Cả team</h3>
+          <span class="member-count" id="memberCount">—</span>
+        </div>
+        <ul class="member-list" id="memberList"></ul>
+      </div>
+
+      <!-- tab 2 -->
+      <div class="tab-panel hidden" id="panel-menu">
+        <div class="menu-wrap">
+          <table class="menu-table">
+            <thead>
+              <tr><th>Menu chỉ mang tính tham khảo</th><th>Tổng</th></tr>
+            </thead>
+            <tbody id="menuBody"></tbody>
+          </table>
+        </div>
+        <p class="empty hidden" id="menuEmpty">Menu trống trơn 🥺</p>
+      </div>
+
+      <!-- tab 3 -->
+      <div class="tab-panel hidden" id="panel-moments">
+        <div class="moment-grid" id="momentGrid"></div>
+        <p class="empty hidden" id="momentEmpty">Chưa có ảnh bữa nào hết á 🥺</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
