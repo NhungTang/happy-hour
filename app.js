@@ -104,6 +104,7 @@ const DUTY = [
   'huyennt7',
   'diepntn',
   'hieult3',
+  'luyennt',
 ];
 
 /* tên đã điền, bỏ slot trống */
