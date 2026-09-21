@@ -103,7 +103,7 @@ const DUTY = [
   'vula',
   'huyennt7',
   'diepntn',
-  'hieult3
+  'hieult3',
 ];
 
 /* tên đã điền, bỏ slot trống */
