@@ -40,7 +40,7 @@ const PLACES = [
 const PLACE = 'Pantry tầng 19';
 
 /* trần ngân sách một bữa — nhập quá là bị kéo về mức này */
-const MAX_BUDGET = 800000;
+const MAX_BUDGET = 700000;
 
 /* Khoảnh khắc ăn uống — ảnh những bữa ăn của team.
    Bỏ ảnh vào folder images/ rồi điền tên file vào img, vd:
@@ -99,10 +99,11 @@ const MENU = [
    Tên hiện ở dòng ngay dưới tiêu đề trang.
    Slot nào chưa chốt thì để '' cũng được. */
 const DUTY = [
-  'trinhtt',
-  'thêmnt',
-  'hùngvt',
-  'cườngtm',
+  'anmv',
+  'vula',
+  'huyennt7',
+  'diepntn',
+  'hieult3
 ];
 
 /* tên đã điền, bỏ slot trống */
@@ -209,7 +210,7 @@ function renderChefs() {
 }
 
 /* ---------------- ngân sách ---------------- */
-const NUM_FMT = new Intl.NumberFormat('en-US'); // 800000 -> 800,000
+const NUM_FMT = new Intl.NumberFormat('en-US'); // 700000 -> 700,000
 
 function formatNumber(n) {
   return NUM_FMT.format(Math.round(Number(n) || 0));
