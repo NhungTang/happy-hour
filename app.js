@@ -109,11 +109,7 @@ const MENU = [
    Tên hiện ở dòng ngay dưới tiêu đề trang.
    Slot nào chưa chốt thì để '' cũng được. */
 const DUTY = [
-  'nhungtt',
-  'huongttt',
-  'linhdtt4',
-  'tungnm2',
-  'linhtq',
+  
 ];
 
 /* tên đã điền, bỏ slot trống */
