@@ -30,9 +30,19 @@ const PLACES = [
     note: 'Thường đặt: cuốn',
   },
   {
+    name: 'Neko Food - Tré Trộn Bình Định - Đồng me',
+    url: '',
+    note: 'Thường đặt: Tré',
+  },
+  {
     name: 'Hoa quả',
     url: '',
     note: 'Liên hệ Luyến xin contact',
+  },
+  {
+    name: 'Xiên nướng gần cty',
+    url: '',
+    note: 'Liên hệ 0978191003',
   },
 ];
 
